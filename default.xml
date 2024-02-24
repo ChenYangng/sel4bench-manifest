@@ -6,9 +6,10 @@
 <manifest>
   <remote name="nanopb" fetch="https://github.com/nanopb"/>
   <remote name="opensbi" fetch="https://github.com/riscv"/>
-  <remote name="seL4" fetch="."/>
+  <remote name="foxsen" fetch="https://github.com/foxsen"/>
+  <remote name="ChenYangng" fetch="."/>
   
-  <default remote="seL4" revision="loongarch"/>
+  <default remote="ChenYangng" revision="loongarch"/>
   
   <project name="musllibc.git" path="projects/musllibc" upstream="loongarch" dest-branch="loongarch"/>
   <project name="nanopb" remote="nanopb" revision="1466e6f953835b191a7f5acf0c06c941d4cd33d9" upstream="master" dest-branch="refs/tags/0.4.3"/>
@@ -26,4 +27,9 @@
   </project>
   <project name="sel4runtime.git" path="projects/sel4runtime" upstream="loongarch" dest-branch="loongarch"/>
   <project name="util_libs" path="projects/util_libs" upstream="loongarch" dest-branch="loongarch"/>
+  <project name="seL4-Loongarch.git" path="tools/seL4-Loongarch" revision="main" upstream="main" dest-branch="main">
+    <linkfile src="build.sh" dest="build.sh"/>
+    <linkfile src="run_debug.sh" dest="run_debug.sh"/>
+  </project>
+  <project name="qemu-loongarch-runenv.git" path="tools/qemu-loongarch-runenv" remote="foxsen" revision="main" upstream="main" dest-branch="main"/>
 </manifest>
